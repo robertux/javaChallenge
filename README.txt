@@ -13,3 +13,8 @@ Requisitos:
  - Eclipse IDE 2021-09 o superior
  - Java 8 o superior
  - JUnit 4
+
+
+Fuentes:
+
+Archivo sales.csv tomado de: https://eforexcel.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/
