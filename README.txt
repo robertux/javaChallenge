@@ -1,5 +1,5 @@
 ================================================================================
-                              Java Challenge v1.0
+                              Java Challenge Fork v1.2
 ================================================================================
 Creado por: Roberto Linares (contacto@robertux.info)
 Objetivo: Evaluar habilidades de desarrollo en java, lectura de archivos, validacion de datos y calculo de estadisticas.
