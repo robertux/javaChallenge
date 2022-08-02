@@ -1,5 +1,6 @@
 package com.davivienda.sv.challenge;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,20 +22,25 @@ public class SalesCounter {
 	}
 	
 	public Date getOldestDate() {
-		//TODO: Implementar
-		return null;
+//		List<Date> fechas = new ArrayList<Date>();
+//		for(SalesBean sale : sales) {
+//			fechas.add(sale.getOrderDate());
+//		}
+		SalesBean sale = Collections.min(sales, Comparator.comparing(s -> s.getOrderDate()));
+		//return Collections.min(fechas);
+		return sale.getOrderDate();
 	}
 	
 	public String getMostExpensiveItem() {
-		//TODO: Implementar
-		return null;
+		SalesBean sale = sales.stream().max(Comparator.comparing(SalesBean::getUnitPrice)).get();
+		return sale.getItemType();
 	}
 	
 	public String getCountryWithMostSales() {
-		//TODO: Implementar
-		return null;
+		SalesBean sale = Collections.max(sales, Comparator.comparing(s -> s.getUnitsSold()));
+		return sale.getCountry();
 	}
-	
+	     
 	public List<SalesBean> getSales() {
 		return sales;
 	}

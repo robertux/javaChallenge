@@ -19,7 +19,17 @@ public class SalesBean {
 	private DateFormat sdf = new SimpleDateFormat("M/dd/yyyy");
 	
 	public SalesBean(String csvLine) throws ParseException {
-		//TODO: Implementar
+
+		String[] sale = csvLine.split(",");
+		this.region = sale[0];
+		this.country = sale[1];
+		this.itemType = sale[2];
+		this.orderPriority = sale[4];
+		this.orderDate = sdf.parse(sale[5]);
+		this.orderId =  Long.valueOf(sale[6]);
+		this.unitsSold = Long.valueOf(sale[8]);
+		this.unitPrice = new BigDecimal(sale[9]);
+		
 	}
 	
 	public String getRegion() {
@@ -71,6 +81,7 @@ public class SalesBean {
 	public void setUnitPrice(BigDecimal unitPrice) {
 		this.unitPrice = unitPrice;
 	}
+	
 
 	@Override
 	public String toString() {

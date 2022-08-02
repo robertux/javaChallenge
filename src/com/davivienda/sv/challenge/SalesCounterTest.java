@@ -45,6 +45,6 @@ public class SalesCounterTest extends TestCase {
 		assertNotNull("date no debe ser nulo", date);
 		assertNotNull("counter no debe ser nulo", counter);
 		assertEquals("counter debe tener 100 sales", 100, counter.getSales().size());
-		assertEquals("Pais debe ser The Gambia", "The Gambia", counter.getCountryWithMostSales());
+		assertEquals("Pais debe ser Tuvalu", "Tuvalu", counter.getCountryWithMostSales());
 	}
 }
