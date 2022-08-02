@@ -1,9 +1,9 @@
 package com.davivienda.sv.challenge;
 
 import java.math.BigDecimal;
-import java.text.DateFormat;
+//import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+//import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SalesBean {
@@ -15,8 +15,18 @@ public class SalesBean {
 	private long orderId;
 	private long unitsSold;
 	private BigDecimal unitPrice;
+	private BigDecimal totalRevenue;
+	private BigDecimal totalProfit;
 	
-	private DateFormat sdf = new SimpleDateFormat("M/dd/yyyy");
+	public BigDecimal getTotalRevenue() {
+		return totalRevenue;
+	}
+
+	public void setTotalRevenue(BigDecimal totalRevenue) {
+		this.totalRevenue = totalRevenue;
+	}
+
+	//private DateFormat sdf = new SimpleDateFormat("M/dd/yyyy");
 	
 	public SalesBean(String csvLine) throws ParseException {
 		//TODO: Implementar
@@ -70,6 +80,12 @@ public class SalesBean {
 	}
 	public void setUnitPrice(BigDecimal unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+	public BigDecimal getTotalProfit() {
+		return totalProfit;
+	}
+	public void setTotalProfit(BigDecimal totalProfit) {
+		this.totalProfit = totalProfit;
 	}
 
 	@Override
