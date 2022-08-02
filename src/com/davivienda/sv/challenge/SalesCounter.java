@@ -22,11 +22,13 @@ public class SalesCounter {
 	}
 	
 	public Date getOldestDate() {
-		List<Date> fechas = new ArrayList<Date>();
-		for(SalesBean sale : sales) {
-			fechas.add(sale.getOrderDate());
-		}
-		return Collections.min(fechas);
+//		List<Date> fechas = new ArrayList<Date>();
+//		for(SalesBean sale : sales) {
+//			fechas.add(sale.getOrderDate());
+//		}
+		SalesBean sale = Collections.min(sales, Comparator.comparing(s -> s.getOrderDate()));
+		//return Collections.min(fechas);
+		return sale.getOrderDate();
 	}
 	
 	public String getMostExpensiveItem() {
