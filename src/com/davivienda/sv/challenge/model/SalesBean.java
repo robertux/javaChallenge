@@ -1,12 +1,11 @@
-package com.davivienda.sv.challenge;
+package com.davivienda.sv.challenge.model;
 
 import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SalesBean {
+public class SalesBean 
+{
+	
 	private String region;
 	private String country;
 	private String itemType;
@@ -16,10 +15,9 @@ public class SalesBean {
 	private long unitsSold;
 	private BigDecimal unitPrice;
 	
-	private DateFormat sdf = new SimpleDateFormat("M/dd/yyyy");
 	
-	public SalesBean(String csvLine) throws ParseException {
-		//TODO: Implementar
+	public SalesBean() {
+		
 	}
 	
 	public String getRegion() {
@@ -70,6 +68,11 @@ public class SalesBean {
 	}
 	public void setUnitPrice(BigDecimal unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+	
+	public BigDecimal getTotalRevenue()
+	{
+		return this.unitPrice.multiply(BigDecimal.valueOf(this.unitsSold));
 	}
 
 	@Override
